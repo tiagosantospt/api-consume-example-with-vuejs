@@ -1,7 +1,7 @@
 # API Consume example with VueJS
 
-Hi, this is an example how you can consume an API with VueJS. 
-You can use this project whenever you want to.
+Hi, this is an example how you can consume an API with VueJS.\
+You can use this project whenever you want to.\
 Also, you can see this project live on : http://github.tiagosantos.xyz/api-consume-example-with-vuejs/
 
 ## Project setup
@@ -28,4 +28,4 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Copyright
-The Covid API Stats was taken from https://api.covid19api.com/
+The Covid API Stats was taken from https://covid19api.com/
