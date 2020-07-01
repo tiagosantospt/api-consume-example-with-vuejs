@@ -35,30 +35,13 @@
 
 <script>
 
-import CovidService from '../services/covidService';
-const covidService = new CovidService();
-
 export default {
-  data: function () {
-    return {
-      data: {
-        TotalConfirmed : '--- --- ---',
-        TotalActive : '--- --- ---',
-        TotalRecovered : '--- --- ---',
-        TotalDeaths : '--- --- ---',
-      }
-    }
-  },
+  props: ['data'],
   methods: {
     numberWithSpaces(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
   },
-  async created() {
-    let response = await covidService.getAll();
-    this.data = response.data.Global;
-    this.data.TotalActive = this.data.TotalConfirmed - (this.data.TotalRecovered + this.data.TotalDeaths)
-  }
 }
 </script>
 

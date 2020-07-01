@@ -9,7 +9,7 @@
         </select>
       </div>
 
-      <div class="country-stats">
+      <div class="world-stats">
         <div class="stat-box">
           <div class="content">
             <p class="number">{{ numberWithSpaces(data.TotalConfirmed) }}</p>
@@ -35,20 +35,18 @@
           </div>
         </div>
       </div>
+      
     </div>
   </section>
 </template>
 
 <script>
 
-import CovidService from '../services/covidService';
-const covidService = new CovidService();
-
 export default {
+  props: ['countries'],
   data: function () {
     return {
       countryIndex: 0,
-      countries: {},
       data: {
         TotalConfirmed : '--- --- ---',
         TotalActive : '--- --- ---',
@@ -66,15 +64,20 @@ export default {
       this.getCountryData();
     },
     getCountryData() {
+      // verify if the countries array is empty
+      if(Object.keys(this.countries).length === 0 && this.countries.constructor === Object) { return; }
+
+      //if not...
       this.data = this.countries[this.countryIndex];
       this.data.TotalActive = this.data.TotalConfirmed - (this.data.TotalRecovered + this.data.TotalDeaths)
     }
   },
-  async created() {
-    let response = await covidService.getAll();
-    this.countries = response.data.Countries;
-    this.getCountryData();
-  }
+  watch: {
+    countries: {
+      handler: 'getCountryData',
+      immediate: true
+    }
+  }  
 }
 </script>
 
@@ -84,7 +87,7 @@ export default {
 @import "../assets/scss/Common.scss";
 
 section.country {
-  .select-container {
+  .select-container { 
     display: flex;
     justify-content: center;
     margin-bottom: 45px;

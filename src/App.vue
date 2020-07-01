@@ -1,8 +1,8 @@
 <template>
   <main id="app">
     <Hello msg="Stay at home to protect your family and be safe"/>
-    <WorldStats/>
-    <CountryStats/>
+    <WorldStats :data="worldData"/>
+    <CountryStats :countries="countries" ref="countryStatsComponent"/>
     
     <div class="footer">
       <p>Made with <span class="red">love</span> by <a href="https://www.linkedin.com/in/tiagosantospt/">tiagosantospt</a></p>
@@ -11,6 +11,10 @@
 </template>
 
 <script>
+
+import CovidService from './services/covidService';
+const covidService = new CovidService();
+
 import Hello from './components/Hello.vue'
 import WorldStats from './components/WorldStats.vue'
 import CountryStats from './components/CountryStats.vue'
@@ -21,6 +25,24 @@ export default {
     Hello,
     WorldStats,
     CountryStats
+  },
+  data : function () {
+    return {
+      countries: {},
+      worldData: {
+        TotalConfirmed : '--- --- ---',
+        TotalActive : '--- --- ---',
+        TotalRecovered : '--- --- ---',
+        TotalDeaths : '--- --- ---',
+      }
+    }
+  },
+  async created() {
+    let response = await covidService.getAll();
+    this.worldData = response.data.Global;
+    this.worldData.TotalActive = this.worldData.TotalConfirmed - (this.worldData.TotalRecovered + this.worldData.TotalDeaths)
+    this.countries = response.data.Countries;
+    // this.$refs.countryStatsComponent.getCountryData();
   }
 }
 </script>
