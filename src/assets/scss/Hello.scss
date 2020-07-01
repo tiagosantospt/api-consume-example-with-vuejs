@@ -1,0 +1,124 @@
+section.hello {
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 60vh;
+    -webkit-box-shadow: 0px 5px 10px #50505082;
+    -moz-box-shadow: 0px 5px 10px #50505082;
+    box-shadow: 0px 5px 10px #50505082;
+    overflow: hidden;
+
+    h1 {
+        font-size: 9vw;
+        text-transform: uppercase;
+        margin: 0;
+        z-index: 1;
+        color: white;
+        text-shadow: 0px 0px 5px rgba(white, .2);
+        animation: lefttoright 2s;
+        line-height: 1;
+    }
+
+    p {
+        font-size: 1.4vw;
+        margin: 0;
+        z-index: 1;
+        font-weight: 500;
+        color: white;
+        animation: righttoleft 2s;
+    }
+
+    .back-text {
+        position: absolute;
+        font-size: 25vw;
+        font-weight: 700;
+        -webkit-text-stroke: 1px  rgba(white,.4);
+        color: transparent;
+        z-index: 0;
+        animation: toptobot 2s;
+        line-height: 1;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    section.hello {
+        h1 {
+        font-size: 108px;
+        }
+
+        p {
+        font-size: 16.9px;
+        }
+
+        .back-text {
+        font-size: 300px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section.hello {
+        height: 30vh;
+        
+        h1 {
+        font-size: calc(108px/1.2);
+        }
+
+        p {
+        font-size: calc(16.9px/1.2);
+        }
+
+        .back-text {
+        font-size: calc(300px/1.2);
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    section.hello {
+        h1 {
+        font-size: calc(108px/1.45);
+        }
+
+        .back-text {
+        font-size: calc(300px/1.9);
+        }
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    section.hello {
+        h1 {
+        font-size: calc(108px/1.70);
+        }
+
+        p {
+        font-size: calc(16.9px/1.35);
+        }
+
+        .back-text {
+        font-size: calc(300px/2.25);
+        }
+    }
+}
+
+
+@keyframes toptobot {
+    from {opacity: 0;margin-top: -15vh;}
+    to {opacity: 1;margin-top: 0;}
+}
+
+@keyframes lefttoright {
+    from {opacity: 0;margin-left: -15vw;}
+    to {opacity: 1;margin-left: 0vw;}
+}
+
+@keyframes righttoleft {
+    from {opacity: 0;margin-right: -15vw;}
+    to {opacity: 1;margin-right: 0vw;}
+}

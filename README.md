@@ -28,4 +28,4 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Copyright
-The Covid API Stats was taken from https://covid19api.com/
+The Covid API Stats was taken from https://covid19api.com

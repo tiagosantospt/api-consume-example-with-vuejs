@@ -1,0 +1,140 @@
+
+@import "Variables.scss";
+
+section.stats, section.country {
+    padding: 25px 15px;
+
+    .container {
+        display: block;
+        margin: 0 auto;
+        max-width: 1200px; 
+    }
+  
+    h1.title {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0 30px;
+        font-size: 36px;
+        color: $red;
+    }
+
+    .country-stats, .world-stats {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 -15px;
+        margin-bottom: 50px!important;
+
+        .stat-box {
+            position: relative;
+            min-width: 125px;
+            margin: 0 15px;
+            width: 100%;
+            height: 75px;
+            border-radius: 15px;
+
+            &:before {
+                position: absolute;
+                content: "";
+                left: 50%;
+                bottom: 20%;
+                transform: translateX(-50%);
+                width: 50%;
+                border-radius: 50%;
+            }
+
+            &:nth-child(1) {
+                box-shadow: 0px 0px 10px rgba(103, 172, 218, .2);
+                &:before {
+                    -webkit-box-shadow: 0 0 30px 15px rgb(103, 172, 218);
+                    -moz-box-shadow: 0 0 30px 15px rgb(103, 172, 218);
+                    box-shadow: 0 0 30px 15px rgb(103, 172, 218);
+                }
+            }
+
+            &:nth-child(2) {
+                box-shadow: 0px 0px 10px rgba(244, 189, 126, .2);
+                &:before {
+                    -webkit-box-shadow: 0 0 30px 15px rgb(244, 189, 126);
+                    -moz-box-shadow: 0 0 30px 15px rgb(244, 189, 126);
+                    box-shadow: 0 0 30px 15px rgb(244, 189, 126);
+                }
+            }
+
+            &:nth-child(3) {
+                box-shadow: 0px 0px 10px rgba(130, 192, 128, .2);
+                &:before {
+                    -webkit-box-shadow: 0 0 30px 15px rgb(130, 192, 128);
+                    -moz-box-shadow: 0 0 30px 15px rgb(130, 192, 128);
+                    box-shadow: 0 0 30px 15px rgb(130, 192, 128);
+                }
+            }
+
+            &:nth-child(4) {
+                box-shadow: 0px 0px 10px rgba($red, .2);
+                &:before {
+                    -webkit-box-shadow: 0 0 30px 15px $red;
+                    -moz-box-shadow: 0 0 30px 15px $red;
+                    box-shadow: 0 0 30px 15px $red;
+                }
+            }
+
+            .content {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                background-color: white;
+                border-radius: 15px;
+                padding: 15px;
+                text-align: center;
+
+                p {
+                    margin: 0;
+
+                    &.number {
+                        font-size: 20px;
+                        font-weight: 600;
+                        min-height: 30px;
+                    }
+
+                    &.desc {
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section.country, section.stats {
+    
+      h1.title {
+        display: flex;
+        justify-content: center;
+        margin: 0 0 30px;
+        font-size: 36px;
+        color: $red;
+      }
+  
+      .country-stats, .world-stats {
+        margin: -15px 0;
+        flex-direction: column;
+  
+        .stat-box {
+          margin: 7.5px 0;
+          height: 95px;
+  
+          .content p.number {
+            min-height: 45.45px; 
+            font-size: 30px;
+          }
+        }
+      }
+  
+    }
+  }
