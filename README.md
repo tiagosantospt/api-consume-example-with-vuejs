@@ -27,5 +27,8 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## Copyright
+## References
 The Covid API Stats was taken from https://covid19api.com
+
+## Copyright
+Made with love by [tiagosantospt](https://www.linkedin.com/in/tiagosantospt/).
