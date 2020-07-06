@@ -1,6 +1,7 @@
 # NOTICE
 ```diff 
-- API BROKEN 
+- THE API IS BROKEN
++ but you can clone this project and replace for another one
 ```
 
 # API Consume example with VueJS
