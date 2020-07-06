@@ -1,3 +1,5 @@
+#```diff - API BROKEN ```
+
 # API Consume example with VueJS
 
 Hi, this is an example how you can consume an API with VueJS.\
