@@ -2,54 +2,28 @@
   <section class="stats">
     <div class="container">
       <h1 class="title">World Cases</h1>
-
-      <div class="world-stats">
-        <div class="stat-box">
-          <div class="content">
-            <p class="number">{{ numberWithSpaces(data.TotalConfirmed) }}</p>
-            <p class="desc">TOTAL CASES</p>
-          </div>
-        </div>
-        <div class="stat-box">
-          <div class="content">
-            <p class="number">{{ numberWithSpaces(data.TotalActive) }}</p>
-            <p class="desc">ACTIVE CASES</p>
-          </div>
-        </div>
-        <div class="stat-box">
-          <div class="content">
-            <p class="number">{{ numberWithSpaces(data.TotalRecovered) }}</p>
-            <p class="desc">RECOVERED CASES</p>
-          </div>
-        </div>
-        <div class="stat-box">
-          <div class="content">
-            <p class="number">{{ numberWithSpaces(data.TotalDeaths) }}</p>
-            <p class="desc">TOTAL DEATHS</p>
-          </div>
-        </div>
-      </div>
+      <BoxContainer 
+        :totalActive="data.TotalActive"
+        :totalConfirmed="data.TotalConfirmed"
+        :totalRecovered="data.TotalRecovered"
+        :totalDeaths="data.TotalDeaths"
+      />
     </div>
   </section>
 </template>
 
 <script>
+import BoxContainer from './common/BoxContainer.vue'
 
 export default {
   props: ['data'],
-  methods: {
-    numberWithSpaces(x) {
-      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-    }
-  },
+  components: { BoxContainer }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 @import "../assets/scss/Variables.scss";
-@import "../assets/scss/Common.scss";
 
 section.stats {
   background-color: rgba($grey, .4);

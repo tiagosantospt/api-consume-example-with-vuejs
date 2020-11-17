@@ -48,15 +48,16 @@ export default {
 </script>
 
 <style lang="scss">
-
-@import "assets/scss/Variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@import "./assets/scss/Variables.scss";
+@import "./assets/scss/Common.scss";
 
 #app {
   font-family: Poppins, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #505050;
+  color: $darker-grey;
   background-color: white;
 }
 
