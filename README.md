@@ -1,3 +1,9 @@
+# NOTICE
+```diff 
+- THE API IS BROKEN
++ but you can clone this project and replace the API
+```
+
 # API Consume example with VueJS
 
 Hi, this is an example how you can consume an API with VueJS.\
